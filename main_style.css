@@ -1,14 +1,14 @@
 body {
-    background-color:  #291038;
+    background-color: #421e57;
     margin: 0; 
     padding: 0; 
-}
+} 
 
 #box {
     font-family: 'Garet', sans-serif;
     font-weight: bold;
-    background-color: #421e57;
-    color: #FFFFF0; 
+    background-color: #cd44ff;
+    color: #fffff0; 
     padding: 20px; 
     height: auto; 
     width: auto; 
@@ -29,22 +29,170 @@ body {
 }
 
 .nav-links li{
-    padding: 0 20px; 
+    padding: 8px; 
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #FFFFF0; 
+    color: #fffff0; 
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     font-weight: 600;
-    letter-spacing: 0.5px; 
-    transition: color 0.3s ease;
+    padding: 12px 6px 12px 6px;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
 }
 
 .nav-links a:hover {
-    color: #008080
+    background-color: #862e71;     
+    color: #fffff0;
+}
+
+#about-us, #gov-links, #focus24-candies {
+    font-family: 'Garet', sans-serif;
+    font-weight: bold;
+    font-size: 20px; 
+    background-color: #421e57;
+    color: #fffff0; 
+    padding: 20px; 
+    height: auto; 
+    width: auto; 
+    align-items: center; 
+}
+
+p{
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+#platforms {
+    font-family: 'Hanken Grotesk', sans-serif;
 }
 
 
+/* Footer Styles */
 
+#contact-info {
+    background-color: #cd44ff; 
+    color: #fffff0;
+    font-family: 'Hanken Grotesk', sans-serif;
+    padding: 60px 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-announcement {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #fffff0; 
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: 50px;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logos {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Temporary placeholders for your custom logos */
+.logo-placeholder {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.brand-name {
+    color: #fffff0; 
+    font-family: 'Hanken Grotesk', serif; 
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.brand-subtext {
+    margin: 0;
+    font-size: 14px;
+    color: #fffff0;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.contact-heading {
+    color: #fffff0; 
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+}
+
+.contact-email {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.contact-email a {
+    color: #fffff0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-email a:hover {
+    color: #ffffff;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #fffff0;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links a:hover {
+    color: #ffffff; 
+}
+
+@media (max-width: 768px) {
+    .footer-main {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .footer-right {
+        align-items: center;
+    }
+}
