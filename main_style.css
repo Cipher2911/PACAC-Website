@@ -48,7 +48,7 @@ body {
     color: #fffff0;
 }
 
-#about-us, #gov-links, #focus24-candies {
+#about-us, #candies, #government, #intro-text {
     font-family: 'Garet', sans-serif;
     font-weight: bold;
     font-size: 20px; 
@@ -60,12 +60,120 @@ body {
     align-items: center; 
 }
 
-p{
-    font-family: 'Hanken Grotesk', sans-serif;
+#about-us, #intro-text, #government{
+    text-align: center;
 }
 
-#platforms {
+#text-box {
+    background-color: #5c277a; /* Plain solid background color */
+    padding: 40px; /* Space inside the box so text doesn't touch the edges */
+    margin: 40px auto; /* Centers the box horizontally and adds vertical space */
+    max-width: 800px; /* Prevents the box from stretching too wide on large screens */
+    
+    /* Ensuring there are no extra styles */
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Optional: Keep your text neat inside this plain box */
+.text-box p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Container styling to space out the bubbles */
+#gov-links {
+    font-family: 'Garet', sans-serif;
+    font-weight: bold;
+    font-size: 20px; 
+    background-color: #421e57;
+    color: #fffff0; 
+    padding: 40px 20px; 
+    height: auto; 
+    width: auto; 
+    display: flex;
+    justify-content: center; /* Centers the bubbles */
+    text-align: center;
+    align-items: center; 
+    gap: 15px; /* Adds space between each bubble */
+    flex-wrap: wrap; /* Keeps them neat on smaller screens */
+}
+
+/* The Bubble Effect specifically for links inside #gov-links */
+#gov-links a {
+    text-decoration: none;
+    color: #fffff0; 
+    background-color: #862e71; /* Bubble color */
     font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 28px; /* High horizontal padding for width */
+    border-radius: 30px; /* Creates the rounded bubble shape */
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* Hover effect for the bubbles */
+#gov-links a:hover {
+    background-color: #008080; 
+    color: black; /* Text changes to background color */
+    transform: translateY(-3px); /* Makes the bubble float up slightly */
+}
+
+p{
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 100;
+}
+
+/* For Candies */ 
+
+/* Centers the candidate's name and section title */
+.candidate-name, .section-title {
+    text-align: center;
+    color: #fffff0;
+    font-family: 'Garet', sans-serif;
+}
+
+/* Flexbox container to hold the project boxes horizontally */
+.platforms-container {
+    display: flex;
+    justify-content: space-between; /* Spaces boxes out evenly */
+    gap: 20px; /* Adds space between each box */
+    margin: 30px auto 60px; /* Adds margin around the container */
+    flex-wrap: wrap; /* Allows boxes to stack on small screens */
+    max-width: 1200px; /* Keeps it from stretching too wide on large screens */
+    padding: 0 20px;
+}
+
+/* The individual horizontal text boxes */
+.platform-box {
+    background-color: #5c277a; /* A lighter background color for the box */
+    padding: 25px;
+    border-radius: 12px; /* Rounded corners */
+    flex: 1; /* Forces all boxes to take up equal horizontal space */
+    min-width: 280px; /* Prevents boxes from getting too squished */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight drop shadow */
+}
+
+/* Styling the text inside the boxes */
+.platform-box h4 {
+    font-family: 'Garet', sans-serif;
+    font-weight: bold;
+    margin-top: 0;
+    color: #fffff0; /* A pop of bright color for the project title */
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-family: 'Garet', sans-serif;
+}
+
+.platform-desc {
+    font-family: 'Hanken Grotesk', sans-serif;
+    color: #fffff0;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    text-align: justify;
 }
 
 
