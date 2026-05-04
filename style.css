@@ -44,8 +44,8 @@ body {
 }
 
 .nav-links a:hover {
-    background-color: #862e71;     
-    color: #fffff0;
+    background-color: #41D3BD;     
+    color: black; 
 }
 
 #about-us, #candies, #government, #intro-text {
@@ -106,7 +106,7 @@ body {
     color: #fffff0; 
     background-color: #862e71; /* Bubble color */
     font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     padding: 12px 28px; /* High horizontal padding for width */
     border-radius: 30px; /* Creates the rounded bubble shape */
@@ -116,7 +116,7 @@ body {
 
 /* Hover effect for the bubbles */
 #gov-links a:hover {
-    background-color: #008080; 
+    background-color: #41D3BD; 
     color: black; /* Text changes to background color */
     transform: translateY(-3px); /* Makes the bubble float up slightly */
 }
