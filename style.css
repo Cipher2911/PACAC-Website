@@ -60,6 +60,10 @@ body {
     align-items: center; 
 }
 
+#bp {
+    margin-bottom: 200px; 
+}
+
 #about-us, #intro-text, #government{
     text-align: center;
 }

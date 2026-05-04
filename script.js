@@ -23,34 +23,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Feature 2: Reveal Animation on Scroll for Platform Boxes
+    // Feature 2: Reveal Animation on Scroll (Fades in AND out)
     const platformBoxes = document.querySelectorAll('.platform-box');
     
-    // Set the initial hidden state for the animation
+    // Set the initial hidden state and smooth transitions
     platformBoxes.forEach(box => {
         box.style.opacity = '0';
         box.style.transform = 'translateY(30px)';
-        box.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        // Keeps your color and shadow transitions from the hover effect intact
+        box.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out';
     });
 
-    const revealOnScroll = () => {
-        // Calculate when the element enters the bottom 80% of the viewport
-        const triggerBottom = (window.innerHeight / 5) * 4;
-        
-        platformBoxes.forEach(box => {
-            const boxTop = box.getBoundingClientRect().top;
-            
-            if (boxTop < triggerBottom) {
-                // Reveal the box
-                box.style.opacity = '1';
-                box.style.transform = 'translateY(0)';
+    // Create the Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Fade IN when the box enters the screen
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            } else {
+                // Fade OUT when the box leaves the screen (scrolling up or down)
+                entry.target.style.opacity = '0';
+                entry.target.style.transform = 'translateY(30px)';
             }
         });
-    };
+    }, {
+        // This threshold means the animation triggers when 15% of the box is visible
+        threshold: 0.15 
+    });
 
-    // Listen for scroll events and trigger on initial load
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); 
+    // Tell the observer to watch every platform box
+    platformBoxes.forEach(box => {
+        observer.observe(box);
+    });
 
     // Feature 3: JS-powered Hover Effect for Platform Boxes
     // (Note: We already declared 'platformBoxes' earlier for the scroll animation, 
@@ -61,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             box.style.transform = 'translateY(0) scale(1.05)';
             box.style.boxShadow = '0 12px 24px rgba(0, 0, 0, 0.4)';
             box.style.cursor = 'default';
+            box.style.backgroundColor = '#cd44ff';
         });
 
         // When the mouse moves OFF the box
@@ -68,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Revert back to normal size and normal shadow
             box.style.transform = 'translateY(0) scale(1)';
             box.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)'; 
+            box.style.backgroundColor = '#5c277a';
         });
     });
 });
