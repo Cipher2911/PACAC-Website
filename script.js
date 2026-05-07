@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, {
         // This threshold means the animation triggers when 15% of the box is visible
-        threshold: 0.15 
+        threshold: 0.6
     });
 
     // Tell the observer to watch every platform box
@@ -58,8 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Feature 3: JS-powered Hover Effect for Platform Boxes
-    // (Note: We already declared 'platformBoxes' earlier for the scroll animation, 
-    // so we can just reuse that same variable here!)
     platformBoxes.forEach(box => {
         // When the mouse hovers OVER the box
         box.addEventListener('mouseenter', () => {
@@ -76,5 +74,38 @@ document.addEventListener('DOMContentLoaded', () => {
             box.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)'; 
             box.style.backgroundColor = '#5c277a';
         });
+    });
+
+    // Feature 4: Scrolling Animation for Text Boxes in main.html
+
+    const textBoxes = document.querySelectorAll('#text-box'); 
+    
+    // 2. Set the initial hidden state and smooth transitions
+    textBoxes.forEach(box => {
+        box.style.opacity = '0';
+        box.style.transform = 'translateY(40px)'; // Pushed down slightly more for a nice effect
+        box.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+    });
+
+    // 3. Create a new Intersection Observer specifically for the text boxes
+    const textObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Fade IN and slide up when the box enters the screen
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            } else {
+                // Fade OUT and slide down when the box leaves the screen
+                entry.target.style.opacity = '0';
+                entry.target.style.transform = 'translateY(40px)';
+            }
+        });
+    }, {
+        threshold: 0.65 // Triggers when 15% of the text box is visible
+    });
+
+    // 4. Tell the observer to watch every text box
+    textBoxes.forEach(box => {
+        textObserver.observe(box);
     });
 });
