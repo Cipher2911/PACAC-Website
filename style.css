@@ -52,11 +52,11 @@ body {
 
 /* --- DROPDOWN MENU STYLES --- */
 
-.dropdown {
+.dropdown-a, .dropdown-b {
     position: relative; 
 }
 
-.dropdown-menu {
+.dropdown-menu-a, .dropdown-menu-b {
     display: none; /* Keeps it invisible by default */
     position: absolute;
     top: 100%; /* Pushes it exactly below the 'Councils' text */
@@ -64,22 +64,29 @@ body {
     list-style: none; /* Removes bullet points */
     padding: 0;
     margin: 0;
-    min-width: 110px; /* Makes sure the box is wide enough for the text */
     box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Adds a nice shadow to make it pop */
     border-radius: 10px; /* Rounds the bottom corners */
     overflow: hidden;
     z-index: 1000; /* Ensures the menu floats ON TOP of your background images/text */
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown-menu-a {
+    min-width: 133px; /* Makes sure the box is wide enough for the text */
+}
+
+.dropdown-menu-b {
+    min-width: 110px; /* Makes sure the box is wide enough for the text */
+}
+
+.dropdown-a:hover .dropdown-menu-a, .dropdown-b:hover .dropdown-menu-b{
     display: block;
 }
 
-.dropdown-menu li {
+.dropdown-menu-a li, .dropdown-menu-b li {
     padding: 0; /* Resets the padding so the links fill the whole box */
 }
 
-.dropdown-menu li a {
+.dropdown-menu-a li a, .dropdown-menu-b li a{
     display: block;
     padding: 15px 20px;
     color: #fffff0;
@@ -88,7 +95,7 @@ body {
     transition: background-color 0.2s ease; /* Smooth color change on hover */
 }
 
-.dropdown-menu li a:hover {
+.dropdown-menu-a li a:hover, .dropdown-menu-b li a:hover {
     background-color: #41D3BD; 
     color: black; 
 }
@@ -110,6 +117,55 @@ body {
 }
 
 /* MAIN CONTENT */
+/* Styling for the new Intro Text */
+#intro {
+    display: flex;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Aligns content to the left */
+}
+
+.intro-content {
+    max-width: 600px;
+    text-align: left;
+}
+
+.intro-name {
+    font-family: 'Garet', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fffff0;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.intro-tagline {
+    font-family: 'Bebas Neue', sans-serif; /* Matches the bold, condensed look */
+    font-size: 200px; /* Large impactful size */
+    line-height: 0.9;
+    color: #41D3BD; /* Light blue/teal color from the image */
+    margin: 0 0 20px 20px;
+    text-transform: uppercase;
+}
+
+.intro-description {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: #fffff0;
+    max-width: 500px;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .intro-title {
+        font-size: 60px;
+    }
+    #intro {
+        padding-left: 5%;
+    }
+}
+
 #about-us, #candies, #government, #intro-text, #intro {
     font-family: 'Garet', sans-serif;
     font-weight: bold;
@@ -210,6 +266,7 @@ p{
     align-items: center; 
     gap: 30px; /* Adds space between each bubble */
     flex-wrap: wrap; /* Keeps them neat on smaller screens */
+    border-radius: 30px;
 }
 
 /* The Bubble Effect specifically for links inside #gov-links */
