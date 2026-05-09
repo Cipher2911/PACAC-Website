@@ -2,6 +2,8 @@ body {
     background-color: #421e57;
     margin: 0; 
     padding: 0; 
+    width: 100%; 
+    overflow-x: hidden;
 } 
 
 /* INTRO SECTION */ 
@@ -465,6 +467,7 @@ p{
 }
 
 .social-links a {
+    color: #421e57; 
     transition: color 0.2s ease;
     display: flex;
     align-items: center;
