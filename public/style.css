@@ -168,7 +168,7 @@ body {
     }
 }
 
-#about-us, #candies, #government, #intro-text, #intro {
+#about-us, #candies, #government, #intro-text, #intro, #contact-intro {
     font-family: 'Garet', sans-serif;
     font-weight: bold;
     font-size: 20px; 
@@ -180,7 +180,7 @@ body {
     align-items: center; 
 }
 
-#about-us, #intro-text, #government{
+#about-us, #intro-text, #government, #contact-intro{
     text-align: center;
 }
 
@@ -188,7 +188,7 @@ body {
     margin: 200px; 
 }
 
-#text-box {
+#text-box, #contact-text-box{
     background-color: #5c277a; /* Plain solid background color */
     padding: 40px; /* Space inside the box so text doesn't touch the edges */
     margin: 40px auto; /* Centers the box horizontally and adds vertical space */
@@ -489,4 +489,23 @@ p{
     .footer-right {
         align-items: center;
     }
+}
+/* Ensure the grid fits 4 members on large screens */
+@media (min-width: 1024px) {
+    .platforms-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Enhancing the hover state for the cards */
+.gov-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #5c277a; /* Matches your theme */
+}
+
+.gov-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }

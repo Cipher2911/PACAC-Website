@@ -29,6 +29,10 @@ app.get('/focus25', (req, res) => {
     res.render('focus25', { title: 'FOCUS 25 | Candidates' });
 });
 
+app.get('/contact', (req, res) => {
+    res.render('contact', { title: 'Contact Us' });
+});
+
 // 4. Start the server
 app.listen(PORT, () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
